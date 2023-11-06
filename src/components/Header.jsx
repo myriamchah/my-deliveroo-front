@@ -6,7 +6,7 @@ const Header = ({ restaurant }) => {
       <nav>
         <img src={logo} alt="logo Deliveroo" />
       </nav>
-      <div className="container d-flex">
+      <div className="container banner">
         <div className="banner-desc">
           <h1>{restaurant.name}</h1>
           <p>{restaurant.description}</p>

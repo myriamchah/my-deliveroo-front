@@ -1,18 +1,11 @@
-body {
-  font-family: "IBM Plex Sans", sans-serif;
-  background: #f3f5f5;
-  color: #2e3333;
-}
+@import "./assets/css/fonts.css";
+@import "./assets/css/icons.css";
+@import "./assets/css/typo.css";
 
 .container {
   max-width: 1200px;
   width: 96vw;
-  padding: 30px 0;
-  margin: 0 auto;
-}
-
-.d-flex {
-  display: flex;
+  margin: 30px auto;
 }
 
 img {
@@ -34,15 +27,55 @@ header nav img {
   margin: 0 120px;
 }
 
-.banner-desc p {
-  color: #868a8a;
-  font-size: 18px;
-  line-height: 1.5;
+.container.banner {
+  display: flex;
+  padding: 30px 0;
 }
 
-h1 {
-  font-size: 32px;
+.banner-desc p {
+  font-size: 18px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px 12px;
+}
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 15px;
+  width: 30%;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+}
+
+.card .price {
+  font-size: 16px;
+  color: #808484;
+}
+
+.card .popular {
+  color: #ff8000;
+  font-size: 12px;
   font-weight: bold;
-  margin-bottom: 24px;
-  margin-top: 12px;
+  margin-left: 16px;
+}
+
+.card img {
+  width: 130px;
+  height: 120px;
+  object-fit: cover;
+  margin-left: 4px;
 }
