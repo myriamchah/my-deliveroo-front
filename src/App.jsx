@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 
 import Header from "./components/Header";
-import Categories from "./components/Categories";
+import Menu from "./components/Menu";
 
 const App = () => {
   const [data, setData] = useState();
@@ -25,7 +25,7 @@ const App = () => {
       ) : (
         <>
           <Header restaurant={data.restaurant} />
-          <Categories categories={data.categories} />
+          <Menu categories={data.categories} />
         </>
       )}
     </>
