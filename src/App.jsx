@@ -12,6 +12,21 @@ const App = () => {
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
+  const addMeal = (meal) => {
+    if (cart.find((m) => m.id === meal.id)) {
+      meal.quantity += 1;
+      setCart([...cart]);
+    } else {
+      meal.quantity = 1;
+      setCart([...cart, meal]);
+    }
+  };
+
+  const removeMeal = (meal) => {
+    meal.quantity -= 1;
+    setCart([...cart]);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       const response = await axios.get("http://localhost:3200/");
@@ -29,11 +44,8 @@ const App = () => {
         <>
           <Header restaurant={data.restaurant} />
           <main className="container">
-            <Menu
-              categories={data.categories}
-              {...{ cart, setCart, setShowCart }}
-            />
-            <Cart {...{ cart, showCart }} />
+            <Menu categories={data.categories} {...{ addMeal, setShowCart }} />
+            <Cart {...{ cart, setCart, addMeal, removeMeal, showCart }} />
           </main>
         </>
       )}

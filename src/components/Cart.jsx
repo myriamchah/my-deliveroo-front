@@ -1,10 +1,10 @@
 import CartLine from "./CartLine";
 
-const Cart = ({ cart, showCart }) => {
+const Cart = ({ cart, addMeal, removeMeal, showCart }) => {
   const fees = 2.5;
   let subTotal = 0;
   cart.forEach((meal) => {
-    subTotal += +meal.price;
+    subTotal += +meal.price * meal.quantity;
   });
 
   return (
@@ -14,7 +14,9 @@ const Cart = ({ cart, showCart }) => {
         <div className="cart-content">
           {showCart ? (
             cart.map((meal) => {
-              return <CartLine key={meal.title} meal={meal} />;
+              return (
+                <CartLine key={meal.title} {...{ addMeal, removeMeal, meal }} />
+              );
             })
           ) : (
             <p>Votre panier est vide</p>

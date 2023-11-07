@@ -1,9 +1,9 @@
-const Meal = ({ meal, cart, setCart, setShowCart }) => {
+const Meal = ({ meal, addMeal, setShowCart }) => {
   return (
     <div
       className="card"
       onClick={() => {
-        setCart([...cart, meal]);
+        addMeal(meal);
         setShowCart(true);
       }}
     >

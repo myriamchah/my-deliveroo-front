@@ -1,6 +1,6 @@
 import Meal from "./Meal";
 
-const Menu = ({ categories, cart, setCart, setShowCart }) => {
+const Menu = ({ categories, addMeal, setShowCart }) => {
   return (
     <div className="col-left">
       {categories
@@ -12,10 +12,7 @@ const Menu = ({ categories, cart, setCart, setShowCart }) => {
               <div className="cards">
                 {category.meals.map((meal) => {
                   return (
-                    <Meal
-                      {...{ meal, cart, setCart, setShowCart }}
-                      key={meal.id}
-                    />
+                    <Meal {...{ meal, addMeal, setShowCart }} key={meal.id} />
                   );
                 })}
               </div>
