@@ -118,10 +118,40 @@ main {
 }
 
 .cart-line {
-  display: block;
+  display: flex;
+  margin-bottom: 8px;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart-line i {
+  color: #00cdbd;
+  font-size: 20px;
+}
+
+.cart-line span:first-child {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+  gap: 4px;
+}
+.cart-line span:nth-child(2) {
+  flex: 1 1;
+}
+
+.cart-footer div {
   margin-bottom: 8px;
 }
 
-.cart-line span:last-child {
+.cart-footer span {
   float: right;
+}
+
+.cart-footer .total {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+hr {
+  margin: 16px 0;
 }

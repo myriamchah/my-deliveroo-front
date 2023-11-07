@@ -3,10 +3,7 @@ const Meal = ({ meal, cart, setCart, setShowCart }) => {
     <div
       className="card"
       onClick={() => {
-        console.log(cart);
-        const newCart = cart;
-        newCart.push(meal);
-        setCart(newCart);
+        setCart([...cart, meal]);
         setShowCart(true);
       }}
     >

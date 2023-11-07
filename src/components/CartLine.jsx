@@ -4,8 +4,8 @@ const CartLine = ({ meal }) => {
       <span>
         <i className="icon-minus"></i> X <i className="icon-plus"></i>
       </span>
-      <span> {meal.title}</span>
-      <span> {meal.price} €</span>
+      <span>{meal.title}</span>
+      <span>{meal.price} €</span>
     </div>
   );
 };
