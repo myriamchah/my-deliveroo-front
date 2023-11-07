@@ -1,6 +1,15 @@
-const Meal = ({ meal }) => {
+const Meal = ({ meal, cart, setCart, setShowCart }) => {
   return (
-    <div className="card">
+    <div
+      className="card"
+      onClick={() => {
+        console.log(cart);
+        const newCart = cart;
+        newCart.push(meal);
+        setCart(newCart);
+        setShowCart(true);
+      }}
+    >
       <div>
         <h3>{meal.title}</h3>
         <p>{meal.description}</p>

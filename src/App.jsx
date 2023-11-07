@@ -4,10 +4,13 @@ import "./App.css";
 
 import Header from "./components/Header";
 import Menu from "./components/Menu";
+import Cart from "./components/Cart";
 
 const App = () => {
   const [data, setData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +28,13 @@ const App = () => {
       ) : (
         <>
           <Header restaurant={data.restaurant} />
-          <Menu categories={data.categories} />
+          <main className="container">
+            <Menu
+              categories={data.categories}
+              {...{ cart, setCart, setShowCart }}
+            />
+            <Cart {...{ cart, showCart }} />
+          </main>
         </>
       )}
     </>

@@ -32,8 +32,20 @@ header nav img {
   padding: 30px 0;
 }
 
+main {
+  display: flex;
+}
+
 .banner-desc p {
   font-size: 18px;
+}
+
+.col-left {
+  width: 66%;
+}
+
+.col-right {
+  width: 33%;
 }
 
 .cards {
@@ -50,7 +62,7 @@ header nav img {
   border-radius: 5px;
   cursor: pointer;
   padding: 15px;
-  width: 30%;
+  width: 48%;
 }
 
 .card p {
@@ -78,4 +90,38 @@ header nav img {
   height: 120px;
   object-fit: cover;
   margin-left: 4px;
+}
+
+.cart {
+  background-color: white;
+  border-radius: 6px;
+  margin-top: 30px;
+  padding: 16px;
+  position: sticky;
+  top: 30px;
+}
+
+.cart button {
+  background-color: #00cdbd;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  padding: 16px;
+  font-size: 16px;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.cart-content {
+  width: 100%;
+}
+
+.cart-line {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.cart-line span:last-child {
+  float: right;
 }
