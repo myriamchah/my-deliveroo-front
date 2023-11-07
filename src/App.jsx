@@ -29,9 +29,15 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await axios.get("http://localhost:3200/");
-      setData(response.data);
-      setIsLoading(false);
+      try {
+        const response = await axios.get(
+          "https://site--backend-deliveroo--rv77lmsyy8s9.code.run/"
+        );
+        setData(response.data);
+        setIsLoading(false);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchData();
   }, []);
