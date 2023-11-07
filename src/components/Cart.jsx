@@ -1,6 +1,12 @@
 import CartLine from "./CartLine";
 
 const Cart = ({ cart, showCart }) => {
+  const fees = 2.5;
+  let subTotal = 0;
+  cart.forEach((meal) => {
+    subTotal += +meal.price;
+  });
+
   return (
     <div className="col-right">
       <div className="cart">
@@ -19,14 +25,14 @@ const Cart = ({ cart, showCart }) => {
           <div className="cart-footer">
             <hr />
             <div>
-              Sous-total <span>xx €</span>
+              Sous-total <span>{subTotal} €</span>
             </div>
             <div>
-              Frais de livraison <span>xx €</span>
+              Frais de livraison <span>{fees} €</span>
             </div>
             <hr />
             <div className="total">
-              Total <span>xx €</span>
+              Total <span>{subTotal + fees} €</span>
             </div>
           </div>
         )}

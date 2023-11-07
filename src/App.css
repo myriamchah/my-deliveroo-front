@@ -99,6 +99,7 @@ main {
   padding: 16px;
   position: sticky;
   top: 30px;
+  box-shadow: 5px 5px 15px 5px #c7c7c7;
 }
 
 .cart button {
@@ -111,10 +112,16 @@ main {
   font-size: 16px;
   margin-bottom: 16px;
   width: 100%;
+  cursor: pointer;
 }
 
 .cart-content {
   width: 100%;
+}
+
+.cart-content p {
+  text-align: center;
+  color: #808484;
 }
 
 .cart-line {
@@ -127,6 +134,7 @@ main {
 .cart-line i {
   color: #00cdbd;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .cart-line span:first-child {
