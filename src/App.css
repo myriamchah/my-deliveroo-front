@@ -115,6 +115,12 @@ main {
   cursor: pointer;
 }
 
+.cart button:disabled {
+  background-color: lightgray;
+  color: #808484;
+  cursor: not-allowed;
+}
+
 .cart-content {
   width: 100%;
 }

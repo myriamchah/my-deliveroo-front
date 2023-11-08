@@ -10,7 +10,12 @@ const Cart = ({ cart, addMeal, removeMeal, showCart }) => {
   return (
     <div className="col-right">
       <div className="cart">
-        <button>Valider mon panier</button>
+        <button
+          disabled={subTotal === 0}
+          onClick={() => alert("Merci pour votre commande !")}
+        >
+          Valider mon panier
+        </button>
         <div className="cart-content">
           {showCart ? (
             cart.map((meal) => {

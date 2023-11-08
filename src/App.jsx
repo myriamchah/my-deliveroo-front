@@ -19,26 +19,38 @@ const App = () => {
     } else {
       meal.quantity = 1;
       setCart([...cart, meal]);
+      setShowCart(true);
     }
   };
 
   const removeMeal = (meal) => {
     meal.quantity -= 1;
     setCart([...cart]);
+
+    let sum = 0;
+    cart.forEach((meal) => {
+      sum += meal.quantity;
+    });
+    console.log(sum);
+
+    if (sum === 0) {
+      setShowCart(false);
+    }
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://site--backend-deliveroo--rv77lmsyy8s9.code.run/"
+      );
+      setData(response.data);
+      setIsLoading(false);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://site--backend-deliveroo--rv77lmsyy8s9.code.run/"
-        );
-        setData(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-      }
-    };
     fetchData();
   }, []);
 

@@ -1,6 +1,9 @@
 const CartLine = ({ addMeal, removeMeal, meal }) => {
   return (
-    <div className="cart-line">
+    <div
+      className="cart-line"
+      style={{ display: meal.quantity <= 0 ? "none" : "" }}
+    >
       <span>
         <i className="icon-minus" onClick={() => removeMeal(meal)}></i>{" "}
         {meal.quantity}
